@@ -1,3 +1,4 @@
+/*
 $.getScript('http://cdn.jsdelivr.net/qtip2/2.2.1/jquery.qtip.min.js', function(data, textStatus){
 	console.log(textStatus);
     // Create the tooltips only when document ready
@@ -40,11 +41,7 @@ Template.noteForm.events({
     'click .save-btn': function (event, template) {
        noteInfo = {
           title: $('.note-title').val(),
-          content: $('#summernote').val(),
-          isFavorite: false,
-          isPublic: false,
-          author: this.userId,
-          createdAt: new Date
+          content: $('#summernote').val()
       };
       
    Notes.insert(Meteor.userId(), noteInfo);   
@@ -53,3 +50,5 @@ Template.noteForm.events({
     }
    
 });
+
+*/

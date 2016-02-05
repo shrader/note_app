@@ -3,16 +3,9 @@
 <body>
 
 
-<div class="container" >
-  <form>
-    <label for="note-title" class="control-label">Title</label>
-    <input type="text" class="note-title">
 
-    <label for="textArea">Note</label>
-    <div id="summernote">
-    </div>
-  <button type="button" class="save-btn">Save</button>
-  </form>
+<div class="container" >
+  {{> quickForm collection="Notes" id="insertNoteForm" type="insert" class="new-note-form"}}
 </div>
 
 </body>

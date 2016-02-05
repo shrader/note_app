@@ -6,7 +6,7 @@ Notes.allow({
 	}
 });
 
-/*
+
 NotesSchema = new SimpleSchema({
 	title:{
 		type: String,
@@ -19,18 +19,27 @@ NotesSchema = new SimpleSchema({
 	isFavorite: {
 		type: Boolean,
 		defaultValue: false,
-		optional: true
+		optional: true,
+		autoform: {
+			type: "hidden"
+		}
 	},
 	isPublic: {
 		type: Boolean,
 		defaultValue: false,
-		optional: true
+		optional: true,
+		autoform: {
+			type: "hidden"
+		}
 	},
 	author: {
 		type: String,
 		label: "Author",
 		autoValue: function() {
 			return this.userId
+		},
+		autoform: {
+			type: "hidden"
 		}
 	},
 	createdAt: {
@@ -39,7 +48,10 @@ NotesSchema = new SimpleSchema({
 		autoValue: function() {
 			if ( this.isInsert ) {
         return new Date;
-		}}
+		}},
+		autoform: {
+			type: "hidden"
+		}
 	},
 	 updated: {
     type: Date,
@@ -47,9 +59,10 @@ NotesSchema = new SimpleSchema({
     autoValue: function() {
       if ( this.isUpdate ) {
         return new Date;
-      }} 
+      }},
+	  autoform: {
+			type: "hidden"
+		} 
 }});
 
 Notes.attachSchema( NotesSchema );
-*/
-
