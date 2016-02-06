@@ -102,6 +102,7 @@ reactive-var@1.0.6
 reload@1.1.4
 retry@1.0.4
 routepolicy@1.0.6
+rzymek:tinymce-cdn@4.0.0_2
 service-configuration@1.0.5
 session@1.1.1
 sha@1.0.4

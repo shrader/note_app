@@ -3,14 +3,16 @@
 </head>
 
 <body>
-  <h1>Welcome to Meta-Note!</h1>
+  <h1 id="two" >Welcome to Meta-Note!</h1>
   {{>loginButtons}}
   <h1><a href='http://qtip2.com/demos/data/owl' class="owl" >Owl</a></h1>
-<button type="button" class="btn btn-default btn-lg">
+<button type="button"  id="one">
  New  <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
 </button>
   {{> noteForm}}
 
-
+<form id="myform">
+<textarea id="mytextarea">Hello World!</textarea>
+</form>
 </body>
 

@@ -6,7 +6,7 @@ Notes.allow({
 	}
 });
 
-
+/*
 NotesSchema = new SimpleSchema({
 	title:{
 		type: String,
@@ -66,3 +66,5 @@ NotesSchema = new SimpleSchema({
 }});
 
 Notes.attachSchema( NotesSchema );
+
+*/

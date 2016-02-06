@@ -1,10 +1,22 @@
-/*
+
 $.getScript('http://cdn.jsdelivr.net/qtip2/2.2.1/jquery.qtip.min.js', function(data, textStatus){
 	console.log(textStatus);
     // Create the tooltips only when document ready
     $(document).ready(function()
     {
-        $('#summernote').summernote();
+        tinymce.init({
+    selector: '#mytextarea'
+  });
+  
+   $('#one').click(function(){
+    console.log(tinyMCE.activeEditor.getContent());
+   noteInfo = {
+        title : "Title",
+        content : tinyMCE.activeEditor.getContent()
+    }; 
+    Notes.insert( noteInfo);
+ });
+
         // MAKE SURE YOUR SELECTOR MATCHES SOMETHING IN YOUR HTML!!!
         $('.owl').each(function() {
             $(this).qtip({
@@ -37,18 +49,6 @@ $.getScript('http://cdn.jsdelivr.net/qtip2/2.2.1/jquery.qtip.min.js', function(d
 
 
 
-Template.noteForm.events({
-    'click .save-btn': function (event, template) {
-       noteInfo = {
-          title: $('.note-title').val(),
-          content: $('#summernote').val()
-      };
-      
-   Notes.insert(Meteor.userId(), noteInfo);   
-   
-   alert("Note Saved.");
-    }
-   
-});
 
-*/
+
+
