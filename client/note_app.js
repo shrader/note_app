@@ -33,15 +33,7 @@ $.getScript('http://cdn.jsdelivr.net/qtip2/2.2.1/jquery.qtip.min.js', function(d
 });
 
   
-   $('#one').click(function(){
-    console.log(tinyMCE.activeEditor.getContent()+$('#title').val());
-   noteInfo = {
-        title : $('#title').val(),
-        content : tinyMCE.activeEditor.getContent()
-    }; 
-    Notes.insert( noteInfo);
-    
- });
+ 
 
         // MAKE SURE YOUR SELECTOR MATCHES SOMETHING IN YOUR HTML!!!
         $('.owl').each(function() {
@@ -72,8 +64,23 @@ $.getScript('http://cdn.jsdelivr.net/qtip2/2.2.1/jquery.qtip.min.js', function(d
         
 });
 
-
-
+$(document).ready(function() {
+   $('#one').click(function(){
+    console.log(tinyMCE.activeEditor.getContent()+$('#title').val());
+   noteInfo = {
+        title : $('#title').val(),
+        content : tinyMCE.activeEditor.getContent(),
+        isFavorite: false,
+        isPublic: false,
+        author: this.userId,
+        createdAt: new Date
+    }; 
+    Notes.insert( noteInfo);
+    tinyMCE.activeEditor.setContent('');
+    $('#title').val('');
+    
+ });
+}); 
 
 
 
