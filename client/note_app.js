@@ -47,8 +47,6 @@ $.getScript('http://cdn.jsdelivr.net/qtip2/2.2.1/jquery.qtip.min.js', function(d
     });
         
 });
-
-<<<<<<< HEAD
 $(document).ready(function() {
    $('#one').click(function(){
     console.log(tinyMCE.activeEditor.getContent()+$('#title').val());
@@ -67,11 +65,3 @@ $(document).ready(function() {
     
  });
 }); 
-=======
-
-
->>>>>>> parent of 40b6c76... clears input after submit
-
-
-
-
