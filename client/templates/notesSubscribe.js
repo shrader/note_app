@@ -20,15 +20,18 @@ Template.eachNote.onRendered(function(){
 		menubar: false
 		});
 		
-	$('.editBtn').hide();	
+	$('.noteBtns').hide();	
 		
     $(document).on('mouseenter', '.notes', function () {
-        $(this).find(".editBtn").show();
+        $(this).find(".noteBtns").show();
     }).on('mouseleave', '.notes', function () {
-        $(this).find(".editBtn").hide();
+        $(this).find(".noteBtns").hide();
    		 });
 		
 		$('.editBtn').click(function(){
+			
+		});
+		$('.trash').click(function(){
 			
 		});
 	});
