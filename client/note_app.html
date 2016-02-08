@@ -6,7 +6,6 @@
 {{> header}}
 
 
-
 <div class="main-layout">
 <div class="new-note-container">
   <form id="myform"  >
@@ -18,8 +17,9 @@
   </button>
   </form>
 </div>
-
-{{> eachNote}}
+{{#if currentUser}}
+  {{> eachNote}}
+{{/if}} 
 
 </div>
 </body>
