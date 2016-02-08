@@ -35,31 +35,7 @@ $.getScript('http://cdn.jsdelivr.net/qtip2/2.2.1/jquery.qtip.min.js', function(d
   
  
 
-        // MAKE SURE YOUR SELECTOR MATCHES SOMETHING IN YOUR HTML!!!
-        $('.owl').each(function() {
-            $(this).qtip({
-                content: {
-                    text: function(event, api) {
-                        $.ajax({
-                            url: api.elements.target.attr('href') // Use href attribute as URL
-                        })
-                        .then(function(content) {
-                            // Set the tooltip content upon successful retrieval
-                            api.set('content.text', content);
-                        }, function(xhr, status, error) {
-                            // Upon failure... set the tooltip content to error
-                            api.set('content.text', status + ': ' + error);
-                        });
-            
-                        return 'Loading...'; // Set some initial text
-                    }
-                },
-                position: {
-                    viewport: $(window)
-                },
-                style: 'qtip-wiki'
-            });
-        });
+
     });
         
 });
@@ -72,12 +48,13 @@ $(document).ready(function() {
         content : tinyMCE.activeEditor.getContent(),
         isFavorite: false,
         isPublic: false,
-        author: this.userId,
+        author: Meteor.userId(),
         createdAt: new Date
     }; 
     Notes.insert( noteInfo);
     tinyMCE.activeEditor.setContent('');
     $('#title').val('');
+    console.log(noteInfo);
     
  });
 }); 
