@@ -17,8 +17,9 @@
   </button>
   </form>
 </div>
-
-{{> eachNote}}
+{{#if currentUser}}
+  {{> eachNote}}
+{{/if}}  
 
 </div>
 </body>
