@@ -19,8 +19,21 @@ Template.eachNote.onRendered(function(){
 		toolbar: false,
 		menubar: false
 		});
+		
+	$('.editBtn').hide();	
+		
+    $(document).on('mouseenter', '.notes', function () {
+        $(this).find(".editBtn").show();
+    }).on('mouseleave', '.notes', function () {
+        $(this).find(".editBtn").hide();
+   		 });
+		
+		$('.editBtn').click(function(){
+			
+		});
 	});
 });
+
 
 Template.eachNote.helpers({
 	notes: function() {
