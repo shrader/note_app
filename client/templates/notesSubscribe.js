@@ -52,7 +52,7 @@ Template.eachNote.events = {
 		updated: new Date
 		}
 		});  
-		console.log(article.firstChild.nextSibling.nextSibling.nextSibling.innerHTML);
+		console.log("Note updated");
 	},
 	
 	'click .trash' : function () {
