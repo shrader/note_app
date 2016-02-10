@@ -1,5 +1,6 @@
 Meteor.subscribe('notes');
 
+
 Template.eachNote.onRendered(function(){
 	$(document).ready(function() {
 		tinymce.init({
@@ -27,14 +28,8 @@ Template.eachNote.onRendered(function(){
     }).on('mouseleave', '.notes', function () {
         $(this).find(".noteBtns").hide();
    		 });
-		
-		$('.editBtn').click(function(){
-			
-		});
-		$('.trash').click(function(){
-			
-		});
 	});
+	
 });
 
 
@@ -43,3 +38,27 @@ Template.eachNote.helpers({
 		return Notes.find({});
 	}
 });
+
+Template.eachNote.events = {
+	'click .editBtn' : function () {
+		var article = event.target.parentNode.parentNode;	
+		var title = article.firstChild.nextSibling.innerHTML;
+		var newContent = article.firstChild.nextSibling.nextSibling.nextSibling.innerHTML;
+		Notes.update({
+		_id: this._id
+		}, {
+		$set: { content: newContent,
+		title: title,
+		updated: new Date
+		}
+		});  
+		console.log(article.firstChild.nextSibling.nextSibling.nextSibling.innerHTML);
+	},
+	
+	'click .trash' : function () {
+		var sure = confirm("Are you sure you want to delete this note?");
+		if (sure === true){
+			Notes.remove(this._id);
+		}
+	}
+};

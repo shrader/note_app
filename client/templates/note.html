@@ -1,9 +1,9 @@
 <template name="note">
-	<article class="notes" >
-		<h3 class="edit">{{title}}</h3>
+	<article id='{{id}}' class="notes" >
+		<h3 name="title" class="edit">{{title}}</h3>
 		<div class="mce"> {{{content}}} </div>
 		<div class="noteBtns">
-			<button class="editBtn">edit</button>
+			<button class="editBtn">Update</button>
 			<button class="trash">Trash</button>
 		</div>	 
 	</article>
