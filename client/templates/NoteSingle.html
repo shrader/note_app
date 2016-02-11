@@ -1,0 +1,12 @@
+<template name="NoteSingle">
+   	<div class="main-layout"> 
+	<article class="notes" >
+		<h3 name="title">{{notes.title}}</h3>
+		<div class="mce"> {{{notes.content}}} </div>
+		<div class="noteBtns">
+			<button class="editBtn">Update</button>
+			<button class="trash btn-danger"><i class="fa fa-times fa-lg"></i> Delete</button>
+		</div>	 
+	</article>
+   	</div>
+</template>

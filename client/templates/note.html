@@ -2,9 +2,10 @@
 	<article id='{{id}}' class="notes" >
 		<h3 name="title" class="edit">{{title}}</h3>
 		<div class="mce"> {{{content}}} </div>
+		<a href="/note/{{_id}}" >View Details </a>
 		<div class="noteBtns">
 			<button class="editBtn">Update</button>
-			<button class="trash">Trash</button>
+			<button class="trash btn-danger"><i class="fa fa-times fa-lg"></i> Delete</button>
 		</div>	 
 	</article>
 </template>
