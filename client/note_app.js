@@ -1,3 +1,5 @@
+Modal.allowMultiple = true;
+
     $(document).ready(function() {
   
          tinymce.init({
@@ -9,6 +11,8 @@
     media_live_embeds: true,
     browser_spellcheck: true
     });
+    
+     Modal.allowMultiple = true;
     
     $(document).on('focusin', function(e) {
     if ($(e.target).closest(".mce-window, .moxman-window").length) {

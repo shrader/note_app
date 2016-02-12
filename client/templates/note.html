@@ -4,8 +4,43 @@
 		<div class="mce"> {{{content}}} </div>
 		<a href="/note/{{_id}}" >View Details </a>
 		<div class="noteBtns">
-			<button class="editBtn">Update</button>
-			<button class="trash btn-danger"><i class="fa fa-times fa-lg"></i> Delete</button>
-		</div>	 
+			<button class="modalBtn"  data-toggle="modal" ><i class="fa fa-pencil-square-o fa-lg"></i> Edit</button>
+            <button class="trash btn-danger"><i class="fa fa-times fa-lg"></i> Delete</button>
+		</div>
 	</article>
-</template>
+	<!-- Modal starts here -->
+<!-- line modal -->
+<div class="modal fade" id="EditModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+			<h3 class="modal-title" id="lineModalLabel">Edit Note</h3>
+		</div>
+		<div class="modal-body">
+			
+            <!-- content goes here -->
+	<div >
+  <form  >
+    <input id="mytitle" placeholder="Title" type="text" class="form-control titleInput" > 
+  <textarea class="mytextarea"></textarea>
+  </form>
+</div>
+		</div>
+		<div class="modal-footer">
+			<div class="btn-group btn-group-justified" role="group" aria-label="group button">
+				<div class="btn-group" role="group">
+					<button type="button" class="btn btn-default" data-dismiss="modal"  role="button">Close</button>
+				</div>
+				<div class="btn-group btn-delete hidden" role="group">
+					<button type="button" id="delImage" class="btn btn-default btn-hover-red" data-dismiss="modal"  role="button">Delete</button>
+				</div>
+				<div class="btn-group" role="group">
+					<button type="button" class="btn two btn-default btn-hover-green" role="button">Save</button>
+				</div>
+			</div>
+		</div>
+	</div>
+  </div>
+</div>    
+    </template>

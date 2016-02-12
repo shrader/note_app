@@ -13,7 +13,7 @@ Template.eachNote.onRendered(function(){
 		});
 	
 		tinymce.init({
-		selector: 'h3.edit',
+		selector: 'h3.edit, .titleInput',
 		inline: true,
 		toolbar: false,
 		menubar: false
@@ -27,7 +27,15 @@ Template.eachNote.onRendered(function(){
         $(this).find(".noteBtns").hide();
    		 });
 	});
-	
+    
+
+       
+  /*  $('#EditModal').on('shown.bs.modal', function () {
+    console.log("this worked");
+    var article = event.target.parentNode.parentNode;	
+    var title = article.firstChild.nextSibling.innerHTML;
+    $("#title").val(article.firstChild.nextSibling.innerHTML); 
+    }); */
 });
 
 
@@ -41,12 +49,16 @@ Template.eachNote.helpers({
 	}
 });
 
+
+
 Template.eachNote.events = {
-	'click .editBtn' : function () {
+/*	'click .editBtn' : function () {
 		var article = event.target.parentNode.parentNode;	
 		var title = article.firstChild.nextSibling.innerHTML;
 		var newContent = article.firstChild.nextSibling.nextSibling.nextSibling.innerHTML;
-		Notes.update({
+	//	tinyMCE.get('.my-edit-area').setContent(this.content);
+    //    Dom.get("title").set("value",this.title);
+        Notes.update({
 		_id: this._id
 		}, {
 		$set: { content: newContent,
@@ -54,8 +66,8 @@ Template.eachNote.events = {
 		updated: new Date
 		}
 		});  
-		console.log("Note updated");
-	},
+		console.log(this);
+	}, */
 	
 	'click .trash' : function () {
 		var sure = confirm("Are you sure you want to delete this note?");
