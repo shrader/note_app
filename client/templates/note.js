@@ -10,13 +10,7 @@ Template.note.events({
    theTitle = this.title;
    noteId = this._id;
    $(".titleInput").val(theTitle);
-  },
-  
-  'shown.bs.modal #EditModal': function () {
-      console.log("this worked");
-      $(document).ready(function() {
-  
-         tinymce.init({
+       tinymce.init({
     selector: '.mytextarea',
      plugins: ['advlist autolink lists link image charmap print preview anchor',
     'searchreplace visualblocks code fullscreen',
@@ -25,9 +19,15 @@ Template.note.events({
     media_live_embeds: true,
     browser_spellcheck: true
     });
+  },
+  
+  'shown.bs.modal #EditModal': function () {
+      console.log("this worked");
+      $(document).ready(function() {
+  
     
-    //to fix the issue of TinyMCE modals not being editable like when adding
-    // a video or looking at code view
+//to fix the issue of TinyMCE modals not being editable like when adding
+// a video or looking at code view
     $(document).on('focusin', function(e) {
     if ($(e.target).closest(".mce-window, .moxman-window").length) {
 		e.stopImmediatePropagation();
@@ -55,6 +55,11 @@ Template.note.events({
 		});
         console.log("note updated");
         console.log($(shortest).val());
+        console.log(shortest.outerHTML);
+        console.log(shortest.innerHTML);
+        $( ".titleInput" ).each(function( index ) {
+  console.log( index + ": " + $( this ).val() );
+});
         Modal.hide('note');
   }
 });
