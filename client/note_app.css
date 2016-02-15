@@ -29,6 +29,25 @@ input[type=text], select {
     background-color: #45a049;
 }
 
+.noteBtns { display: none; }
+
+.notes:hover .noteBtns { display: block; }
+
+.modalBtn {
+    background-color: #5C97BF;
+    border: none;
+}
+
+.trash {
+    background-color: #E26A6A;
+    border: none;
+}
+
+.trash:hover {
+    background-color: #D64541;
+    border: none;
+}
+
 .container {
     border-radius: 5px;
     background-color: #f2f2f2;
