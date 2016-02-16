@@ -1,8 +1,9 @@
 <template name="note">    
-	<article id='{{id}}' class="notes" >
+	<article id='{{_id}}' class="notes" >
 		<h3 name="title" class="edit">{{title}}</h3>
 		<div class="mce"> {{{content}}} </div>
 		<a href="/note/{{_id}}" >View Details </a>
+        <a href="#" data-tooltip-element="#{{_id}}" style="float:right">{{title}} - Note Link </a>
 		<div class="noteBtns">
 			<button class="modalBtn"  data-toggle="modal" ><i class="fa fa-pencil-square-o fa-lg"></i> Edit</button>
             <button class="trash"><i class="fa fa-times fa-lg"></i> Delete</button>
@@ -11,7 +12,7 @@
 	<!-- Modal starts here -->
 <!-- line modal -->
 <div class="modal fade" id="EditModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog editModal">
 	<div class="modal-content">
 		<div class="modal-header">
 			<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
@@ -47,5 +48,7 @@
    <a href="#"><i class="fa fa-plane"></i></a>
    <a href="#"><i class="fa fa-car"></i></a>
    <a href="#"><i class="fa fa-bicycle"></i></a>
-</div>    
+</div>
+
+{{ > tooltips }}    
     </template>
