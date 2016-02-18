@@ -44,6 +44,7 @@ $(document).ready(function() {
  });
 }); 
 
+
 var makeDraggable = (function($) {
     $.fn.drags = function(opt) {
 

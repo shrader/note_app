@@ -1,14 +1,14 @@
-var oldContent, theTitle, noteId, title;
+var oldContent, theTitle, noteId, title, newThis;
 
 //open modal, set variables while this is = to the note object
 //then set the old note title as text in the title input
 Template.note.events({
   'click .modalBtn': function(event, template) {
    Modal.show('note');
-   console.log(this);
-   oldContent = this.content;
-   theTitle = this.title;
-   noteId = this._id;
+   console.log(newThis);
+   oldContent = newThis.content;
+   theTitle = newThis.title;
+   noteId = newThis._id;
    $(".titleInput").val(theTitle);
        tinymce.init({
     selector: '.mytextarea',
@@ -61,15 +61,37 @@ Template.note.events({
   console.log( index + ": " + $( this ).val() );
 });
         Modal.hide('note');
+  },
+  
+  'click .close-tooltip': function() {
+      Tooltips.hide();
+  },
+  
+  'click .open-tooltip': function(event) {
+     event.preventDefault();
+  },
+  
+  'click .toolbar-button': function() {
+      Tooltips.hide();
+  },
+  
+  'click .option-button': function() {
+      console.log(this);
+      newThis = this;
   }
+  
 });
 
 Template.note.onRendered(function () {
 
     makeDraggable;
+    otherDraggable;
 
     $(".editModal").drags();
+    $(".tooltip").draggable();
 });
+
+$(".open-tooltip").mouseenter(function() { $(this).click() });
 
 var makeDraggable = (function($) {
     $.fn.drags = function(opt) {
@@ -119,4 +141,45 @@ var makeDraggable = (function($) {
         });
 
     }
+})(jQuery);
+
+var otherDraggable = (function($) {
+    $.fn.draggable = function(options) {
+        var $handle = this,
+            $draggable = this;
+        
+        options = $.extend({}, {
+            handle: null,
+            cursor: 'move'
+        }, options);
+
+        if( options.handle ) {
+            $handle = $(options.handle);
+        }
+
+        $handle
+            .css('cursor', options.cursor)
+            .on("mousedown", function(e) {
+                var x = $draggable.offset().left - e.pageX,
+                    y = $draggable.offset().top - e.pageY,
+                    z = $draggable.css('z-index');
+                
+                $draggable.css('z-index', 100000);
+                
+                $(document.documentElement)
+                    .on('mousemove.draggable', function(e) {
+                        $draggable.offset({
+                            left: x + e.pageX,
+                            top: y + e.pageY
+                        });
+                    })
+                    .one('mouseup', function() {
+                        $(this).off('mousemove.draggable');
+                        $draggable.css('z-index', z);
+                    });
+
+                // disable selection
+                e.preventDefault();
+            });
+    };
 })(jQuery);
