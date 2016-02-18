@@ -1,5 +1,8 @@
-var oldContent, theTitle, noteId, title, newThis;
+var oldContent, theTitle, noteId, title, newThis,
+ clipboard, target;
+ 
 
+ 
 //open modal, set variables while this is = to the note object
 //then set the old note title as text in the title input
 Template.note.events({
@@ -78,6 +81,15 @@ Template.note.events({
   'click .option-button': function() {
       console.log(this);
       newThis = this;
+      target = event.target;
+  },
+  
+  'click .note-copy': function() {
+      var x = $(target).find(".open-tooltip");
+      var y = x.context.offsetParent;
+      var z = $(y).find("a.open-tooltip")[0].outerHTML;
+      console.log(z);
+      
   }
   
 });
