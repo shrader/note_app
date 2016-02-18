@@ -1,5 +1,5 @@
 <template name="note">    
-	<article class="notes" >
+	<article class="notes {{#if isPublic}}public{{/if}}" >
 		<h3 name="title" class="edit">{{title}}</h3>
 		<div class="mce"> {{{content}}} </div>
 		<a href="/note/{{_id}}" >View Details </a>
@@ -52,8 +52,8 @@
         <button class="modalBtn toolbar-button" data-toggle="modal" ><i class="fa fa-pencil-square-o fa-lg"></i></button>
         <button class="note-copy toolbar-button"><i class="fa fa-files-o fa-lg"></i></button>
         <button class="toolbar-button"><i class="fa fa-heart-o fa-lg"></i></button>
-        <button class="toolbar-button toggle-public"><i class="fa fa-unlock fa-lg"></i></button>
-        <button class="toolbar-button toggle-public"><i class="fa fa-lock fa-lg"></i></button>
+        <button class="toolbar-button toggle-public make-public"><i class="fa fa-unlock fa-lg"></i></button>
+        <button class="toolbar-button toggle-public make-private" ><i class="fa fa-lock fa-lg"></i></button>
         <button class="trash toolbar-button"><i class="fa fa-trash fa-lg"></i></button>
     </div>   
 {{ > tooltips }}    

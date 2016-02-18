@@ -82,6 +82,14 @@ Template.note.events({
       console.log(this);
       newThis = this;
       target = event.target;
+       if (this.isPublic === true) {
+          $(".make-public").hide();
+          $(".make-private").show();
+      }
+      else {
+          $(".make-public").show();
+          $(".make-private").hide();
+      }
   },
   
   'click .note-copy': function() {
@@ -93,7 +101,6 @@ Template.note.events({
   
   'click .toggle-public': function() {
       Meteor.call('toggleisPublic', newThis._id, newThis.isPublic);
-      console.log("clicked");
   }
   
 });
