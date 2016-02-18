@@ -89,7 +89,11 @@ Template.note.events({
       var y = x.context.offsetParent;
       var z = $(y).find("a.open-tooltip")[0].outerHTML;
       console.log(z);
-      
+  },
+  
+  'click .toggle-public': function() {
+      Meteor.call('toggleisPublic', newThis._id, newThis.isPublic);
+      console.log("clicked");
   }
   
 });
@@ -195,3 +199,5 @@ var otherDraggable = (function($) {
             });
     };
 })(jQuery);
+
+

@@ -4,9 +4,22 @@ Notes.allow({
 	insert: function(userId, doc) {
 		return !!userId;
 	},
-	update: function() { return true; },
-	remove: function() {return true;}
-	
-	
+	update: function(userId, doc) {
+         return !!userId; 
+         },
+	remove: function(userId, doc) {
+         return !!userId; 
+         }
+         
+});
+
+Meteor.methods({
+    toggleisPublic: function(id, currentState) {
+        Notes.update( id, {
+          $set:{
+              isPublic: !currentState
+          }  
+        });
+    }
 });
 
