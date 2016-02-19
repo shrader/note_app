@@ -10,17 +10,8 @@ Template.eachNote.onCreated(function(){
 
 Template.eachNote.helpers({
 	notes: function() {
-		return Notes.find({});
+		return Notes.find( { $or:
+         [ { isPublic: true }, 
+         { author: Meteor.userId() } ] } );
 	}
 });
-
-
-
-Template.eachNote.events = {	
-	'click .trash' : function () {
-		var sure = confirm("Are you sure you want to delete this note?");
-		if (sure === true){
-			Notes.remove(this._id);
-		}
-	}
-};

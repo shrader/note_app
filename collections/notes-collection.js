@@ -20,6 +20,14 @@ Meteor.methods({
               isPublic: !currentState
           }  
         });
-    }
+    },
+    
+   toggleisFavorite: function(id, currentState) {
+        Notes.update( id, {
+          $set:{
+              isFavorite: !currentState
+          }  
+        });
+    } 
 });
 

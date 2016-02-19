@@ -90,6 +90,14 @@ Template.note.events({
           $(".make-public").show();
           $(".make-private").hide();
       }
+       if (this.isFavorite === true) {
+          $(".make-favorite").hide();
+          $(".unfavorite").show();
+      }
+      else {
+          $(".make-favorite").show();
+          $(".unfavorite").hide();
+      }
   },
   
   'click .note-copy': function() {
@@ -101,7 +109,21 @@ Template.note.events({
   
   'click .toggle-public': function() {
       Meteor.call('toggleisPublic', newThis._id, newThis.isPublic);
-  }
+  },
+  
+  'click .toggle-favorite': function() {
+      Meteor.call('toggleisFavorite', newThis._id, newThis.isFavorite);
+  },
+  
+  'click .trash' : function () {
+		var sure = confirm("Are you sure you want to delete this note?");
+		if (sure === true && newThis.author=== Meteor.userId()) {
+			Notes.remove(newThis._id);
+		}
+        else if (newThis.author !== Meteor.userId()) {
+            alert("Only the author can delete this note.");           
+        }
+	}
   
 });
 
