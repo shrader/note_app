@@ -1,22 +1,40 @@
 <template name="SideNav">
-	<nav class="side-nav">
-		<ul>
-            <li>
-                <a data-toggle="modal" data-target="#squarespaceModal"  href="#"><i class="fa fa-plus"></i>Add Note</a>
-            </li>
-            <hr>
-            <li>
-				<a href="/home"><i class="fa fa-home fa-lg"></i>Home</a>
-			</li>
-			<li>
-				<a href="/notebooks"><i class="fa fa-book"></i>Notebooks</a>
-			</li>
-			<li>
-				<a href="/favorites"><i class="fa fa-heart"></i>Favorites</a>
-			</li>
-			<li>
-				<a href="/settings"><i class="fa fa-cog"></i>Settings</a>
-			</li>
-		</ul>
-	</nav>
-</template>
+<nav id="sidebar" role="navigation" data-step="2" data-intro="Template has &lt;b&gt;many navigation styles&lt;/b&gt;"
+                data-position="right" class="navbar-default navbar-static-side side-nav">
+            <div class="sidebar-collapse menu-scroll">
+                <ul id="side-menu" class="nav">
+                    
+                     <div class="clearfix"></div>
+                    <li><a href="/home"><i class="fa fa-home fa-fw">
+                        <div class="icon-bg bg-orange"></div>
+                    </i><span class="menu-title">Home</span></a></li>
+                    <li class="active"><a href="/notebooks"><i class="fa fa-book fa-fw">
+                        <div class="icon-bg bg-pink"></div>
+                    </i><span class="menu-title">Notebooks</span></a>
+                       
+                    </li>
+                    <li><a href="/favorites"><i class="fa fa-heart fa-fw">
+                        <div class="icon-bg bg-gr"></div>
+                    </i><span class="menu-title">Favorites</span></a>
+                       
+                    </li>
+                    <li><a href="/tags"><i class="fa fa-tags fa-fw">
+                        <div class="icon-bg bg-gr"></div>
+                    </i><span class="menu-title">Tags</span></a>
+                       
+                    </li>
+                    <li><a href="/settings"><i class="fa fa-cog fa-fw">
+                        <div class="icon-bg bg-gr"></div>
+                    </i><span class="menu-title">Settings</span></a>
+                       
+                    </li>
+                   
+                
+                </ul>
+                <br>
+                <div style="text-align:center;">
+                <button style="position:center;" data-toggle="modal" data-target="#squarespaceModal"  href="#"><div>Add Note</div></button>
+                </div>                
+            </div>
+        </nav>
+</template>        

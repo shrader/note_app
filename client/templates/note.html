@@ -2,8 +2,8 @@
 	<article class="notes {{#if isPublic}}public{{/if}}" >
 		<h3 name="title" class="edit">{{title}}</h3>
 		<div class="mce"> {{{content}}} </div>
-		<a href="/note/{{_id}}" >View Details </a>
-        <a href="#" data-tooltip-element="#{{_id}}" data-tooltip-trigger="click" class="open-tooltip" style="float:right">{{title}} - Note Link </a>
+		<a class="{{#if isPublic}}public{{/if}}" href="/note/{{_id}}" >View Details </a>
+        <a  href="#" data-tooltip-element="#{{_id}}" data-tooltip-trigger="click" class="{{#if isPublic}}public{{/if}} open-tooltip" style="float:right">{{title}} - Note Link </a>
 		<div><button class="option-button" data-tooltip-element=".popup-options" data-tooltip-trigger="click"><i class="fa fa-cog fa-lg"></i></button></div>
 	</article>
     

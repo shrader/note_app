@@ -1,5 +1,4 @@
 /* CSS declarations go here */
-body { padding:40px; }
 img {
     max-width: 100%;
     max-height: 100%;
@@ -33,10 +32,17 @@ input[type=text], select {
     background-color: #45a049;
 }
 
-
+ a.public {
+     color: white;
+ }
 
 .modalBtn {
     
+}
+
+.intro {
+    margin-top: 20px;
+    display: inline-block;
 }
 
 .trash {
@@ -63,6 +69,9 @@ input[type=text], select {
 	padding-bottom: 5px;
 }
 
+.modal-title {
+    color: #000000
+}
 .modal-footer {
     	padding: 0;
 	}
@@ -108,3 +117,349 @@ input[type=text], select {
     padding: 10px;
 }
 
+/* KP Admin side bar */
+#sidebar {
+  background: #3C3C3C;
+}
+.navbar-static-side {
+  transition: 0.3s all linear;
+}
+.navbar-static-side ul li {
+  border-bottom: 1px solid #484848;
+}
+.navbar-static-side ul li:first-child a {
+  padding: 0;
+}
+.navbar-static-side ul li
+{
+   background: #3C3C3C; /* Old browsers */
+     outline: none;
+      color:#d9d9d9;
+    
+}
+
+.navbar-static-side ul li.active a {
+
+  transition: 0.2s all ease-in-out;
+  outline: none;
+  color:#FFF;
+}
+.navbar-static-side ul li a {
+  color: #d9d9d9;
+  padding: 15px;
+}
+.navbar-static-side ul li a span.menu-title {
+  margin-left: 10px;
+}
+.navbar-static-side ul li a i {
+  font-size: 16px;
+}
+.navbar-static-side ul li a i .icon-bg {
+  display: none;
+}
+.navbar-static-side ul li a:hover,
+.navbar-static-side ul li a:focus {
+background: #303030; /* Old browsers */
+  transition: 0.2s all ease-in-out;
+  outline: none;
+  color:#FFF;
+}
+.navbar-static-side ul li a .badge,
+.navbar-static-side ul li a .label {
+  float: right;
+  margin-right: 10px;
+}
+.navbar-static-side ul li a.menu-title {
+  margin-left: 10px;
+}
+.navbar-static-side ul li .nav-second-level li {
+  border-bottom: 1px solid #484848;
+}
+.navbar-static-side ul li .nav-second-level li.active a,
+.navbar-static-side ul li .nav-second-level li:hover a,
+.navbar-static-side ul li .nav-second-level li:focus a {
+  color: #dc6767;
+}
+.navbar-static-side ul li .nav-second-level li a {
+  padding: 15px 15px 15px 40px;
+  background: #37455f;
+  color: #efefef;
+}
+.navbar-static-side ul li .nav-second-level li a span.submenu-title {
+  margin-left: 10px;
+}
+.navbar-static-side ul li .nav-second-level li .nav-third-level li {
+  border-bottom: 1px solid #484848;
+}
+.navbar-static-side ul li .nav-second-level li .nav-third-level li.active a,
+.navbar-static-side ul li .nav-second-level li .nav-third-level li:hover a,
+.navbar-static-side ul li .nav-second-level li .nav-third-level li:focus a {
+  color: #dc6767;
+}
+.navbar-static-side ul li .nav-second-level li .nav-third-level li a {
+  padding: 15px 15px 15px 40px;
+  background: #313e55;
+  color: #efefef;
+}
+.navbar-static-side ul li .nav-second-level li .nav-third-level li a span.submenu-title {
+  margin-left: 10px;
+}
+.navbar-static-side ul li.sidebar-heading {
+  padding: 5px 15px;
+}
+.navbar-static-side ul li.sidebar-heading h4 {
+  font-family: 'Oswald';
+  font-size: 18px;
+  font-weight: bold;
+  color: #dc6767;
+}
+.navbar-static-side ul li.user-panel {
+  padding: 15px;
+}
+.navbar-static-side ul li.user-panel .thumb {
+  float: left;
+  border: 5px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+.navbar-static-side ul li.user-panel .thumb img {
+  width: 45px;
+  height: 45px;
+}
+.navbar-static-side ul li.user-panel .info {
+  float: left;
+  padding: 5px 5px 5px 15px;
+  color: #ffffff;
+}
+.navbar-static-side ul li.user-panel .info p {
+  margin-bottom: 3px;
+  font-size: 16px;
+}
+.navbar-static-side ul li.user-panel .info a {
+  font-size: 10px;
+}
+.navbar-static-side ul li.user-panel .info a i {
+  font-size: 14px;
+  color: #999;
+}
+.navbar-static-side ul li.user-panel .info a:hover,
+.navbar-static-side ul li.user-panel .info a:focus {
+  background-color: transparent;
+}
+.navbar-static-side ul li.user-panel .info a:hover i,
+.navbar-static-side ul li.user-panel .info a:focus i {
+  color: #777;
+}
+.navbar-static-side ul li.user-panel ul li {
+  border-bottom: 0;
+}
+.sidebar-user-info {
+  padding: 15px;
+}
+.sidebar-user-info img {
+  border: 5px solid #d95b5b;
+  width: 75px;
+  height: 75px;
+  display: inline-block;
+}
+.sidebar-user-info h4 {
+  color: #FFFFFF;
+  margin-bottom: 5px;
+}
+.sidebar-user-info ul {
+  margin-bottom: 3px;
+}
+.sidebar-user-info ul li {
+  border-bottom: 0 !important;
+}
+.sidebar-user-info ul li a {
+  color: #cdcdcd;
+}
+.sidebar-user-info .user-status {
+  width: 10px;
+  height: 10px;
+  border-radius: 50% !important;
+  display: inline-block;
+  background: transparent;
+  margin-right: 5px;
+}
+.sidebar-user-info .user-status.is-online {
+  background: #06B53C;
+}
+.sidebar-user-info .user-status.is-idle {
+  background: #F7D227;
+}
+.sidebar-user-info .user-status.is-busy {
+  background: #ee4749;
+}
+.sidebar-user-info .user-status.is-offline {
+  background: #666666;
+}
+.sidebar-user-info span {
+  color: #FFFFFF;
+}
+.sidebar-user-activity {
+  padding: 15px;
+  border-bottom: 0 !important;
+}
+.sidebar-user-activity h4 {
+  color: #FFFFFF;
+}
+.sidebar-user-activity .note {
+  padding: 3px 15px;
+  margin-bottom: 5px;
+}
+.sidebar-user-activity .note small {
+  color: #cdcdcd;
+}
+.sidebar-user-activity .note a:hover,
+.sidebar-user-activity .note a:focus {
+  background: transparent;
+}
+.arrow {
+  float: right;
+  margin-top: 3px;
+}
+.fa.arrow:before {
+  content: "\f104";
+}
+.active > a > .fa.arrow:before {
+
+}
+@media (min-width: 768px) {
+  .navbar-static-side {
+    z-index: 1;
+    position: absolute;
+    width: 250px;
+  }
+}
+.right-sidebar #topbar .navbar-header {
+  float: right;
+  border-right: 0;
+}
+.right-sidebar #sidebar {
+  left: auto;
+  right: 0;
+}
+.right-sidebar #page-wrapper {
+  margin: 0 250px 0 0;
+}
+/* Begin Horizontal menu */
+/* Begin Left Sidebar Collapsed */
+.left-side-collapsed .navbar-static-side {
+  width: 55px;
+}
+.left-side-collapsed .navbar-static-side ul#side-menu li.user-panel {
+  display: none;
+}
+.left-side-collapsed .navbar-static-side ul#side-menu li.nav-hover a {
+  height: 50px;
+}
+.left-side-collapsed .navbar-static-side ul#side-menu li.nav-hover a span.menu-title {
+  display: block !important;
+}
+.left-side-collapsed .navbar-static-side ul#side-menu li.nav-hover a span.submenu-title {
+  display: block !important;
+  margin-left: 0;
+}
+.left-side-collapsed .navbar-static-side ul#side-menu li.nav-hover ul.nav-second-level {
+  display: block;
+  position: absolute;
+  top: 50px;
+  left: 55px;
+  width: 195px;
+}
+.left-side-collapsed .navbar-static-side ul#side-menu li.nav-hover ul.nav-second-level li a {
+  padding: 15px;
+}
+.left-side-collapsed .navbar-static-side ul#side-menu li a span {
+  display: none;
+}
+.left-side-collapsed .navbar-static-side ul#side-menu li a i.fa {
+  font-size: 18px;
+}
+.left-side-collapsed .navbar-static-side ul#side-menu li a span.menu-title {
+  position: absolute;
+  top: 0;
+  left: 55px;
+  padding: 15px;
+  margin-left: 0;
+  width: 195px;
+  height: 50px;
+    background: #303030; /* Old browsers */
+      outline: none;
+      
+}
+.left-side-collapsed .navbar-static-side ul#side-menu li ul.nav-second-level {
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 55px;
+  width: 195px;
+}
+.left-side-collapsed .navbar-static-side ul#side-menu li ul.nav-second-level li a i {
+  display: none;
+}
+.left-side-collapsed #page-wrapper {
+  margin: 0 0 0 55px;
+}
+/* End Left Sidebar Collapsed */
+/* Begin Right Sidebar Collapsed */
+.right-side-collapsed .navbar-static-side {
+  width: 55px;
+}
+.right-side-collapsed .navbar-static-side ul#side-menu li.user-panel {
+  display: none;
+}
+.right-side-collapsed .navbar-static-side ul#side-menu li.nav-hover a {
+  height: 50px;
+}
+.right-side-collapsed .navbar-static-side ul#side-menu li.nav-hover a span.menu-title {
+  display: block !important;
+}
+.right-side-collapsed .navbar-static-side ul#side-menu li.nav-hover a span.submenu-title {
+  display: block !important;
+  margin-right: 0;
+}
+.right-side-collapsed .navbar-static-side ul#side-menu li.nav-hover ul.nav-second-level {
+  display: block;
+  position: absolute;
+  top: 50px;
+  right: 55px;
+  width: 195px;
+}
+.right-side-collapsed .navbar-static-side ul#side-menu li.nav-hover ul.nav-second-level li a {
+  padding: 15px 5px;
+}
+.right-side-collapsed .navbar-static-side ul#side-menu li a span {
+  display: none;
+}
+.right-side-collapsed .navbar-static-side ul#side-menu li a i.fa {
+  font-size: 18px;
+}
+.right-side-collapsed .navbar-static-side ul#side-menu li a span.menu-title {
+  position: absolute;
+  top: 0;
+  right: 55px;
+  padding: 15px;
+  margin-right: 0;
+  background: #dc6767;
+  color: #ffffff;
+  width: 195px;
+  height: 50px;
+}
+.right-side-collapsed .navbar-static-side ul#side-menu li ul.nav-second-level {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 55px;
+  width: 195px;
+}
+.right-side-collapsed .navbar-static-side ul#side-menu li ul.nav-second-level li a i {
+  display: none;
+}
+.right-side-collapsed #page-wrapper {
+  margin: 0 55px 0 0;
+}
+/* End Left Sidebar Collapsed */
+
+/* */

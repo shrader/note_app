@@ -1,4 +1,5 @@
 Modal.allowMultiple = true;
+var x = false;
 
     $(document).ready(function() {
   
@@ -13,14 +14,14 @@ Modal.allowMultiple = true;
     });
     
      Modal.allowMultiple = true;
-    
+     
+    //allow focus when multiple modals open if its tinyMCE
     $(document).on('focusin', function(e) {
     if ($(e.target).closest(".mce-window, .moxman-window").length) {
 		e.stopImmediatePropagation();
 	}
     });
     
-    $(".tooltip").drags();
     $(".modal-dialog").drags();
   
    });
@@ -32,7 +33,7 @@ $(document).ready(function() {
         title : $('#title').val(),
         content : tinyMCE.activeEditor.getContent(),
         isFavorite: false,
-        isPublic: false,
+        isPublic: x,
         author: Meteor.userId(),
         createdAt: new Date
     }; 
@@ -41,7 +42,26 @@ $(document).ready(function() {
     $('#title').val('');
     $('#squarespaceModal').modal('hide');
     
- });
+   });
+   
+   $('#new-note-public').click(function(e) {
+       $('#new-note-public').addClass('active');
+       if ($('#new-note-private').hasClass('active')) {
+           $('#new-note-private').removeClass('active');
+       }
+       console.log(this.value);
+       x = true;
+       
+   });
+    $('#new-note-private').click(function(e) {
+       $('#new-note-private').addClass('active');
+       if ($('#new-note-public').hasClass('active')) {
+           $('#new-note-public').removeClass('active');
+       }
+       console.log(this.value);
+       x = false;
+   });
+   
 }); 
 
 
@@ -94,3 +114,4 @@ var makeDraggable = (function($) {
 
     }
 })(jQuery);
+

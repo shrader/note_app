@@ -66,7 +66,8 @@ Template.note.events({
         Modal.hide('note');
   },
   
-  'click .close-tooltip': function() {
+  'click .close-tooltip': function(event) {
+      event.preventDefault();
       Tooltips.hide();
   },
   
@@ -134,6 +135,33 @@ Template.note.onRendered(function () {
 
     $(".editModal").drags();
     $(".tooltip").draggable();
+    
+    // Find all YouTube videos
+        var $allVideos = $("iframe[src^='//player.vimeo.com'], iframe[src^='//www.youtube.com']"),
+            // The element that is fluid width
+            $fluidEl = $(".notes");
+
+        // Figure out and save aspect ratio for each video
+        $allVideos.each(function() {
+        $(this)
+            .data('aspectRatio', this.height / this.width)
+            // and remove the hard coded width/height
+            .removeAttr('height')
+            .removeAttr('width');
+        });
+
+        // When the window is resized
+        $(window).resize(function() {
+        var newWidth = $fluidEl.width();
+        // Resize all videos according to their own aspect ratio
+        $allVideos.each(function() {
+            var $el = $(this);
+            $el
+            .width(newWidth)
+            .height(newWidth * $el.data('aspectRatio'));
+        });
+        // Kick off one resize to fix all videos on page load
+        }).resize();
 });
 
 $(".open-tooltip").mouseenter(function() { $(this).click() });
@@ -228,5 +256,4 @@ var otherDraggable = (function($) {
             });
     };
 })(jQuery);
-
 

@@ -2,6 +2,7 @@ accounts-base@1.2.2
 accounts-password@1.1.4
 accounts-ui@1.1.6
 accounts-ui-unstyled@1.1.8
+ajduke:bootstrap-tagsinput@0.5.0
 aldeed:autoform@5.8.1
 aldeed:collection2@2.8.0
 aldeed:collection2-core@1.0.0
@@ -106,6 +107,7 @@ reload@1.1.4
 retry@1.0.4
 routepolicy@1.0.6
 rzymek:tinymce-cdn@4.0.0_2
+sergeyt:typeahead@0.11.1_8
 service-configuration@1.0.5
 session@1.1.1
 sha@1.0.4
