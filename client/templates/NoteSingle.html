@@ -3,15 +3,25 @@
   <article class="notes {{#if notes.isPublic}}public{{/if}}" >
 		<h3 name="title" class="edit">{{notes.title}}</h3>
 		<div class="mce"> {{{notes.content}}} </div>
-        <a href="#" data-tooltip-element="#{{_id}}" data-tooltip-trigger="click" class="open-tooltip" style="float:right">{{title}} - Note Link </a>
-		<div><button class="option-button" data-tooltip-element=".popup-options" data-tooltip-trigger="click"><i class="fa fa-cog fa-lg"></i></button></div>
+        <a href="#" data-tooltip-element="#{{notes._id}}" data-tooltip-trigger="click" class="open-tooltip" style="float:right">{{notes.title}} - Note Link </a>
+		<div><button class="option-button" data-tooltip-element=".{{notes._id}}x" data-tooltip-trigger="click"><i class="fa fa-cog fa-lg"></i></button></div>
 	</article>
     
-    <div id="{{_id}}"  hidden> <div class="tooltip-note-bg"> <a class="close-tooltip" href="#"><span>X</span></a>
+    <div id="{{notes._id}}"  hidden> <div class="tooltip-note-bg"> <a class="close-tooltip" href="#"><span>X</span></a>
     <h3>{{notes.title}}</h3>
     <div>{{{notes.content}}}</div>
     </div>
     </div>
+    
+    <!--Other Notes tooltip  -->
+    {{#each tips}}
+    <div id="{{_id}}"  hidden> <div class="tooltip-note-bg"> <a class="close-tooltip" href="#"><span>X</span></a>
+    <h3>{{title}}</h3>
+    <div>{{{content}}}</div>
+    </div>
+    </div>
+    {{/each}}
+    
 	<!-- Modal starts here -->
 <!-- line modal -->
 <div class="modal fade" id="EditModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
@@ -48,10 +58,11 @@
   </div>
 </div>
    
-<div class="popup-options toolbar-icons" style="display: none;">
+<div class="{{notes._id}}x toolbar-icons" style="display: none;">
         <button class="modalBtn toolbar-button" data-toggle="modal" ><i class="fa fa-pencil-square-o fa-lg"></i></button>
         <button class="note-copy toolbar-button"><i class="fa fa-files-o fa-lg"></i></button>
-        <button class="toolbar-button"><i class="fa fa-heart-o fa-lg"></i></button>
+        <button class="toolbar-button toggle-favorite make-favorite"><i class="fa fa-heart-o fa-lg"></i></button>
+        <button class="toolbar-button toggle-favorite unfavorite"><i class="fa fa-heart fa-lg"></i></button>
         <button class="toolbar-button toggle-public make-public"><i class="fa fa-unlock fa-lg"></i></button>
         <button class="toolbar-button toggle-public make-private" ><i class="fa fa-lock fa-lg"></i></button>
         <button class="trash toolbar-button"><i class="fa fa-trash fa-lg"></i></button>

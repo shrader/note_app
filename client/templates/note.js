@@ -22,6 +22,7 @@ Template.note.events({
     media_live_embeds: true,
     browser_spellcheck: true
     });
+     tinyMCE.activeEditor.setContent(oldContent);
   },
   
   'shown.bs.modal #EditModal': function () {
@@ -36,8 +37,6 @@ Template.note.events({
 		e.stopImmediatePropagation();
 	}
     });
-    
-    tinyMCE.activeEditor.setContent(oldContent);
    });      
   },
   

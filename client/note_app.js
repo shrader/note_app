@@ -1,5 +1,6 @@
 Modal.allowMultiple = true;
 var x = false;
+Meteor.subscribe('notes');
 
     $(document).ready(function() {
   
